@@ -68,7 +68,14 @@ def play_game(attempts=5):
     selected_word = random_word_generator.pick_random_word()
 
     # Create current word state by using _ instead of characters in selected_word
-    current_word_state = "_" * len(selected_word)
+    current_word_state = ""
+
+    for i in range(len(selected_word)):
+        if selected_word[i] == 'a' or selected_word[i]=='e' or selected_word[i]=='i' or selected_word[i]=='o' or selected_word[i]=='u':
+            current_word_state+=selected_word[i]
+        else:
+            current_word_state+='_'    
+
 
     # Attempts allowed
     attempts_remaining = attempts
